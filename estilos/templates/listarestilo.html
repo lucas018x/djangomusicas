@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciar Estilos</title>
+</head>
+<body>
+
+<h1>Lista de Estilos</h1>
+<a href="{% url 'cadastrar_estilos'%}"> Cadastro Novo Estilos </a>
+<ul>
+    {%for estilo in estilos%}
+    <li>
+        {{ estilo.nome}} ({{estilo.sigla}})
+        <a href="{% url 'editar_estilos' estilo.id %}"> Editar</a> |
+        <a href="{% url 'excluir_estilos' estilo.id %}"> Excluir</a>
+    </li>
+    {% endfor %}
+</body>
+</html>
